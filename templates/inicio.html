@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block contenido %}
+
+<div class="text-center mb-5">
+    <h1 class="display-4">Sistema Empresarial</h1>
+
+    <p class="lead">
+        Sistema web desarrollado con Flask y Bootstrap
+        para practicar formularios, rutas y métodos GET y POST.
+    </p>
+</div>
+
+
+<div class="row g-4">
+
+    <!-- Clientes -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Clientes</h3>
+
+                <p class="card-text">
+                    Registra información básica de los clientes.
+                </p>
+
+                <a href="{{ url_for('clientes') }}"
+                   class="btn btn-primary">
+                    Registrar cliente
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Proveedores -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Proveedores</h3>
+
+                <p class="card-text">
+                    Registra empresas proveedoras de productos
+                    o servicios.
+                </p>
+
+                <a href="{{ url_for('proveedores') }}"
+                   class="btn btn-primary">
+                    Registrar proveedor
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Login -->
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Login</h3>
+
+                <p class="card-text">
+                    Ingresa al sistema utilizando un usuario
+                    y contraseña.
+                </p>
+
+                <a href="{{ url_for('login') }}"
+                   class="btn btn-primary">
+                    Iniciar sesión
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
