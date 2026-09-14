@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmación de Proveedor{% endblock %}
+
+{% block contenido %}
+
+<div class="alert alert-success" role="alert">
+
+    <h4 class="alert-heading">
+        Proveedor recibido correctamente
+    </h4>
+
+    <p>
+        La información fue recibida mediante el método POST.
+    </p>
+
+    <hr>
+
+    <p class="mb-0">
+        Los datos todavía no se almacenan de forma permanente.
+    </p>
+
+</div>
+
+
+<div class="card shadow">
+
+    <div class="card-header">
+        <h2>Datos recibidos</h2>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Empresa</th>
+                    <td>{{ empresa }}</td>
+                </tr>
+
+                <tr>
+                    <th>Contacto</th>
+                    <td>{{ contacto }}</td>
+                </tr>
+
+                <tr>
+                    <th>NIT</th>
+                    <td>{{ nit }}</td>
+                </tr>
+
+                <tr>
+                    <th>Tipo de producto/servicio</th>
+                    <td>{{ tipo }}</td>
+                </tr>
+
+                <tr>
+                    <th>Condición de pago</th>
+                    <td>{{ condicion }}</td>
+                </tr>
+
+                <tr>
+                    <th>Proveedor activo</th>
+                    <td>{{ activo }}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+
+        <a href="{{ url_for('proveedores') }}"
+           class="btn btn-primary">
+            Registrar otro proveedor
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
