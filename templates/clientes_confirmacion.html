@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Confirmación de Cliente{% endblock %}
+
+{% block contenido %}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">
+        Cliente recibido correctamente
+    </h4>
+
+    <p>
+        La información fue recibida mediante POST.
+    </p>
+
+    <hr>
+
+    <p class="mb-0">
+        Estos datos todavía no se guardan de forma permanente.
+    </p>
+</div>
+
+
+<div class="card shadow">
+
+    <div class="card-header">
+        <h2>Datos recibidos</h2>
+    </div>
+
+    <div class="card-body">
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ nombre }}</td>
+                </tr>
+
+                <tr>
+                    <th>NIT</th>
+                    <td>{{ nit }}</td>
+                </tr>
+
+                <tr>
+                    <th>Correo</th>
+                    <td>{{ correo }}</td>
+                </tr>
+
+                <tr>
+                    <th>Teléfono</th>
+                    <td>{{ telefono }}</td>
+                </tr>
+
+                <tr>
+                    <th>Dirección</th>
+                    <td>{{ direccion }}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <a href="{{ url_for('clientes') }}"
+           class="btn btn-primary">
+            Registrar otro cliente
+        </a>
+
+    </div>
+</div>
+
+{% endblock %}
