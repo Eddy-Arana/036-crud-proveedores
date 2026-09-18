@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% block title %}Registro de Proveedores{% endblock %}
+
+{% block contenido %}
+
+<div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+        <div class="card shadow">
+
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Registro de Proveedores</h2>
+            </div>
+
+            <div class="card-body">
+
+                <form method="POST">
+
+                    <div class="mb-3">
+                        <label for="empresa" class="form-label">
+                            Empresa
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="empresa"
+                            name="empresa"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="contacto" class="form-label">
+                            Persona de contacto
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="contacto"
+                            name="contacto"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="nit" class="form-label">
+                            NIT
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="nit"
+                            name="nit"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="tipo" class="form-label">
+                            Tipo de producto o servicio
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="tipo"
+                            name="tipo"
+                            required
+                        >
+
+                            <option value="">
+                                Seleccione una opción
+                            </option>
+
+                            <option value="Tecnología">
+                                Tecnología
+                            </option>
+
+                            <option value="Alimentos">
+                                Alimentos
+                            </option>
+
+                            <option value="Oficina">
+                                Artículos de oficina
+                            </option>
+
+                            <option value="Servicios">
+                                Servicios
+                            </option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Condición de pago
+                        </label>
+
+                        <div class="form-check">
+
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="condicion"
+                                id="contado"
+                                value="Contado"
+                                required
+                            >
+
+                            <label
+                                class="form-check-label"
+                                for="contado"
+                            >
+                                Contado
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-check">
+
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="condicion"
+                                id="credito"
+                                value="Crédito"
+                            >
+
+                            <label
+                                class="form-check-label"
+                                for="credito"
+                            >
+                                Crédito
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3 form-check">
+
+                        <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="activo"
+                            name="activo"
+                            value="Sí"
+                        >
+
+                        <label
+                            class="form-check-label"
+                            for="activo"
+                        >
+                            Proveedor activo
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">
+                        Registrar proveedor
+                    </button>
+
+                    <a href="{{ url_for('inicio') }}"
+                       class="btn btn-secondary">
+                        Cancelar
+                    </a>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
