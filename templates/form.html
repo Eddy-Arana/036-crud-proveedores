@@ -1,0 +1,165 @@
+```html
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if proveedor %}
+        Editar Proveedor
+    {% else %}
+        Nuevo Proveedor
+    {% endif %}
+{% endblock %}
+
+{% block contenido %}
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-primary text-white">
+
+                    {% if proveedor %}
+                        <h3 class="mb-0">Editar Proveedor</h3>
+                    {% else %}
+                        <h3 class="mb-0">Nuevo Proveedor</h3>
+                    {% endif %}
+
+                </div>
+
+                <div class="card-body">
+
+                    <form method="POST">
+
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">
+                                Nombre del proveedor
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nombre"
+                                name="nombre"
+                                maxlength="120"
+                                value="{{ proveedor.nombre if proveedor else '' }}"
+                                required>
+                        </div>
+
+                        <!-- NIT -->
+                        <div class="mb-3">
+                            <label for="nit" class="form-label">
+                                NIT
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nit"
+                                name="nit"
+                                maxlength="20"
+                                value="{{ proveedor.nit if proveedor else '' }}">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="telefono"
+                                name="telefono"
+                                maxlength="20"
+                                value="{{ proveedor.telefono if proveedor else '' }}">
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="correo"
+                                name="correo"
+                                maxlength="120"
+                                value="{{ proveedor.correo if proveedor else '' }}">
+                        </div>
+
+                        <!-- Dirección -->
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">
+                                Dirección
+                            </label>
+
+                            <textarea
+                                class="form-control"
+                                id="direccion"
+                                name="direccion"
+                                maxlength="200"
+                                rows="3">{{ proveedor.direccion if proveedor else '' }}</textarea>
+                        </div>
+
+                        <!-- Activo -->
+                        <div class="form-check mb-3">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="activo"
+                                name="activo"
+                                {% if not proveedor or proveedor.activo %}checked{% endif %}>
+
+                            <label
+                                class="form-check-label"
+                                for="activo">
+                                Proveedor activo
+                            </label>
+
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="d-flex gap-2">
+
+                            <button
+                                type="submit"
+                                class="btn btn-success">
+
+                                {% if proveedor %}
+                                    Actualizar proveedor
+                                {% else %}
+                                    Guardar proveedor
+                                {% endif %}
+
+                            </button>
+
+                            <a
+                                href="{{ url_for('lista_proveedores') }}"
+                                class="btn btn-secondary">
+                                Cancelar
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+```
